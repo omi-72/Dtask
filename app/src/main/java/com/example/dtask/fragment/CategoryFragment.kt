@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.dtask.R
+import com.example.dtask.RecyclerViewPublicAdapter
 import com.example.dtask.databinding.FragmentCategoryBinding
 import com.example.dtask.databinding.FragmentHomeBinding
 
@@ -36,7 +39,25 @@ class CategoryFragment : Fragment() {
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
 
+        val recyclerView : RecyclerView = binding.recyclerViewPhotos
+        recyclerView.layoutManager = GridLayoutManager(context, 2)
+        recyclerView.adapter = RecyclerViewPublicAdapter(dataList())
+
+
         return view;
+    }
+
+    private fun dataList(): ArrayList<RecyclerViewPublicAdapter.DataList>{
+
+        val item:ArrayList<RecyclerViewPublicAdapter.DataList> = ArrayList()
+        item.add(RecyclerViewPublicAdapter.DataList("One", R.drawable.one))
+        item.add(RecyclerViewPublicAdapter.DataList("Two", R.drawable.two))
+        item.add(RecyclerViewPublicAdapter.DataList("Three", R.drawable.three))
+        item.add(RecyclerViewPublicAdapter.DataList("Four", R.drawable.four))
+        item.add(RecyclerViewPublicAdapter.DataList("Five", R.drawable.five))
+        item.add(RecyclerViewPublicAdapter.DataList("Six", R.drawable.six))
+
+        return item
     }
 
 }
