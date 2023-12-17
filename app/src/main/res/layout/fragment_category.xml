@@ -9,6 +9,7 @@
     tools:context=".fragment.CategoryFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,13 +48,16 @@
         android:id="@+id/imageSlider"
         app:iss_auto_cycle="true"
         app:iss_delay="0"
+        android:layout_marginTop="20dp"
         app:iss_placeholder="@android:color/darker_gray"
         app:iss_error_image="@android:color/darker_gray"
         app:iss_corner_radius="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCategory"
         app:iss_selected_dot="@drawable/default_selected_dot"
         app:iss_unselected_dot="@drawable/default_unselected_dot"
-        app:iss_period="1000"
-        tools:ignore="MissingConstraints" />
+        app:iss_period="1000" />
 
 
 
