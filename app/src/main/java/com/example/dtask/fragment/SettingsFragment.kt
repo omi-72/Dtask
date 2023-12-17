@@ -36,11 +36,11 @@ class SettingsFragment : Fragment() {
         tabLayout = view.findViewById(R.id.tabP)
         viewPager2 = view.findViewById(R.id.viewP)
 
-        adapter = MyViewAdapter(supportFragmentManager, lifecycle)
+        adapter = MyViewAdapter(childFragmentManager, lifecycle)
         viewPager2.adapter = adapter
 
-        TabLayoutMediator(tabLayout, viewPager2){tab, position ->
-            when(position){
+        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
+            when (position) {
                 0 -> {
                     tab.text = "Profile"
                 }
@@ -48,7 +48,6 @@ class SettingsFragment : Fragment() {
                     tab.text = "Badges"
                 }
             }
-
         }.attach()
 
         return view;
