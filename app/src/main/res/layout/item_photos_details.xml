@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageViewPhotosDetails"
-        android:layout_width="61dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:src="@drawable/ic_killer"
         app:layout_constraintStart_toStartOf="parent"

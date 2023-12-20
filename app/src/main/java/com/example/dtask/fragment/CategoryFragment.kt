@@ -35,7 +35,6 @@ class CategoryFragment : Fragment() {
         imageList.add(SlideModel("https://img.cinemablend.com/filter:scale/quill/3/7/0/0/8/e/37008e36e98cd75101cf1347396eac8534871a19.jpg?mw=600"))
         imageList.add(SlideModel("https://www.adgully.com/img/800/201711/spider-man-homecoming-banner.jpg"))
         imageList.add(SlideModel("https://live.staticflickr.com/1980/29996141587_7886795726_b.jpg"))
-
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
 
 

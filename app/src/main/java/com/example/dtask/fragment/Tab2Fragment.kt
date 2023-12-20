@@ -1,60 +1,124 @@
 package com.example.dtask.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.dtask.PreviewActivity
 import com.example.dtask.R
+import com.example.dtask.UserInfoViewModel
+import com.example.dtask.databinding.FragmentTab2Binding
+import com.example.dtask.entityClass.User
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Tab2Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Tab2Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentTab2Binding
+
+    private lateinit var viewModel: UserInfoViewModel
+
+
+
+//    private lateinit var etUserName: EditText
+//    private lateinit var etAge: EditText
+//    private lateinit var etHeight: EditText
+//    private lateinit var etBloodGroup: EditText
+//    private lateinit var etPhoneNumber: EditText
+//    private lateinit var etEmail: EditText
+//    private lateinit var etAddress: EditText
+//    private lateinit var etProfession: EditText
+//    private lateinit var etHobbies: EditText
+//    private lateinit var btnNext: Button
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab2, container, false)
+        binding = FragmentTab2Binding.inflate(inflater, container, false)
+        return binding.root
+
+
+//        etUserName = view?.findViewById(R.id.editTextName)!!
+//        etAge = view.findViewById(R.id.editTextAge)
+//        etHeight = view.findViewById(R.id.editTextHeight)
+//        etBloodGroup = view.findViewById(R.id.editTextBloodGroup)
+//        etPhoneNumber = view.findViewById(R.id.editTextContactPhone)
+//        etEmail = view.findViewById(R.id.editTextEmail)
+//        etAddress = view.findViewById(R.id.editTextAddress)
+//        etProfession = view.findViewById(R.id.editTextProfession)
+//        etHobbies = view.findViewById(R.id.editTextHobbies)
+//        btnNext = view.findViewById(R.id.buttonNextPersonalDetails)
+//
+//        binding?.buttonNextPersonalDetails?.setOnClickListener {
+//            saveUserDetails()
+//        }
+
+
+
+
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Tab2Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Tab2Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+//    private fun saveUserDetails() {
+//
+//        val userName = etUserName.text.toString()
+//        val age = etAge.text.toString().toInt()
+//        val height = etHeight.text.toString().toDouble()
+//        val bloodGroup = etBloodGroup.text.toString()
+//        val phoneNumber = etPhoneNumber.text.toString()
+//        val email = etEmail.text.toString()
+//        val address = etAddress.text.toString()
+//        val profession = etProfession.text.toString()
+//        val hobbies = etHobbies.text.toString()
+//
+//        // Create UserEntityData object
+//        val user = UserEntityData(
+//            userName = userName,
+//            age = age,
+//            height = height,
+//            bloodGroup = bloodGroup,
+//            phoneNumber = phoneNumber,
+//            email = email,
+//            address = address,
+//            profession = profession,
+//            hobbies = hobbies
+//        )
+//
+//        // Save data to Room database
+//        GlobalScope.launch {
+//            UserDatabase.getDatabase(requireContext()).personalDao().insert(user)
+//        }
+//
+//        // Navigate to PreviewActivity
+//        val previewIntent = Intent(requireContext(), PreviewActivity::class.java)
+//        previewIntent.putExtra("userId", user.id)
+//        startActivity(previewIntent)
+//    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(this).get(UserInfoViewModel::class.java)
+
+        binding.btnSave.setOnClickListener {
+            val firstName = binding.editFirstName.text.toString()
+            val lastName = binding.editLastName.text.toString()
+            val age = binding.editAge.text.toString().toInt()
+
+            viewModel.saveUser(User(firstName, lastName, age))
+
+            val intent = Intent(activity, PreviewActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 }

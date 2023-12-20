@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentsRoom.add.AddFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/framProfile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_profile"
+                android:layout_marginTop="20dp"
+                app:civ_border_width="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:civ_border_color="#FF000000"/>
+
+
+
+            <TextView
+                android:id="@+id/framUserName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/framProfile_image"
+                />
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Type Your Name"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserName"
+                />
+
+            <TextView
+                android:id="@+id/framUserAge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextName"
+                />
+
+            <EditText
+                android:id="@+id/editTextAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Your Age"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserAge"
+                />
+
+            <TextView
+                android:id="@+id/framUserHeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAge"
+                />
+
+            <EditText
+                android:id="@+id/editTextHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Your Height"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserHeight"
+                />
+
+            <TextView
+                android:id="@+id/framUserBloodGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Blood Group"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="15sp"
+
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextHeight"
+                />
+            <EditText
+                android:id="@+id/editTextBloodGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Your Blood Group"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserBloodGroup"
+                />
+
+
+            <TextView
+                android:id="@+id/framUserContactPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextBloodGroup"
+                />
+
+            <EditText
+                android:id="@+id/editTextContactPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Your Phone Number"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserContactPhone"
+                />
+
+            <TextView
+                android:id="@+id/framUserEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextContactPhone"
+                />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="textWebEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Email Address"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserEmail"
+                />
+
+
+            <TextView
+                android:id="@+id/framUserAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+                />
+
+            <EditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Type Your Address"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserAddress"
+                />
+
+            <TextView
+                android:id="@+id/framUserProfession"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Profession"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
+                />
+
+            <EditText
+                android:id="@+id/editTextProfession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Your Profession"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserProfession"
+                />
+
+            <TextView
+                android:id="@+id/framUserHobbies"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Hobbies"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextProfession"
+                />
+            <EditText
+                android:id="@+id/editTextHobbies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="6dp"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Your Hobbies"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/framUserHobbies"
+                />
+
+
+
+            <Button
+                android:id="@+id/buttonNextPersonalDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextHobbies" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

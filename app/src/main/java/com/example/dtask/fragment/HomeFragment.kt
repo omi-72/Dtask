@@ -28,11 +28,10 @@ class HomeFragment : Fragment() {
         val view = binding.root;
 
         val item:ArrayList<PhotosDetailsAdapter.DataList> = ArrayList()
-        item.add(PhotosDetailsAdapter.DataList("Omi", R.drawable.ic_killer))
-        item.add(PhotosDetailsAdapter.DataList("uyt", R.drawable.pk_master))
-        item.add(PhotosDetailsAdapter.DataList("ytu", R.drawable.marks_man))
-        item.add(PhotosDetailsAdapter.DataList("yutu", R.drawable.runner_up))
-        item.add(PhotosDetailsAdapter.DataList("Otrfujhmi", R.drawable.rock_star))
+        item.add(PhotosDetailsAdapter.DataList("Jannatul Bakey Omi", R.drawable.ic_killer))
+        item.add(PhotosDetailsAdapter.DataList("Jannatul Bakey Omi", R.drawable.pk_master))
+        item.add(PhotosDetailsAdapter.DataList("Jannatul Bakey Omi", R.drawable.marks_man))
+        item.add(PhotosDetailsAdapter.DataList("Jannatul Bakey Omi", R.drawable.runner_up))
 
         val recyclerViewD : RecyclerView = binding.recyclerViewPhotosYY
         recyclerViewD.layoutManager = LinearLayoutManager(context)
@@ -40,7 +39,7 @@ class HomeFragment : Fragment() {
 
 
         val recyclerView : RecyclerView = binding.recyclerViewPhotos
-        recyclerView.layoutManager = GridLayoutManager(context, 4)
+        recyclerView.layoutManager = GridLayoutManager(context, 3)
         recyclerView.adapter = RecyclerViewPublicAdapter(dataList())
 
 
@@ -52,13 +51,12 @@ class HomeFragment : Fragment() {
     private fun dataList(): ArrayList<RecyclerViewPublicAdapter.DataList>{
 
         val item:ArrayList<RecyclerViewPublicAdapter.DataList> = ArrayList()
-        item.add(RecyclerViewPublicAdapter.DataList("Omi", R.drawable.ic_killer))
-        item.add(RecyclerViewPublicAdapter.DataList("uyt", R.drawable.pk_master))
-        item.add(RecyclerViewPublicAdapter.DataList("ytu", R.drawable.marks_man))
-        item.add(RecyclerViewPublicAdapter.DataList("yutu", R.drawable.runner_up))
-        item.add(RecyclerViewPublicAdapter.DataList("Otrfujhmi", R.drawable.rock_star))
-        item.add(RecyclerViewPublicAdapter.DataList("Omtfhi", R.drawable.hive_king))
-        item.add(RecyclerViewPublicAdapter.DataList("th", R.drawable.angry_bee))
+        item.add(RecyclerViewPublicAdapter.DataList("Omi", R.drawable.image1))
+        item.add(RecyclerViewPublicAdapter.DataList("uyt", R.drawable.image2))
+        item.add(RecyclerViewPublicAdapter.DataList("ytu", R.drawable.image3))
+        item.add(RecyclerViewPublicAdapter.DataList("yutu", R.drawable.image4))
+        item.add(RecyclerViewPublicAdapter.DataList("Otrfujhmi", R.drawable.image5))
+        item.add(RecyclerViewPublicAdapter.DataList("Omtfhi", R.drawable.image6))
 
         return item
     }

@@ -42,10 +42,10 @@ class SettingsFragment : Fragment() {
         TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text = "Profile"
+                    tab.text = "Tab1"
                 }
                 1 -> {
-                    tab.text = "Badges"
+                    tab.text = "Tab2"
                 }
             }
         }.attach()
